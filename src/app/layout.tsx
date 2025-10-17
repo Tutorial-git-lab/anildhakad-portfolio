@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Link from "next/link";
 
 export default function RootLayout({
   children,
@@ -47,9 +48,9 @@ export default function RootLayout({
           data-aos="fade-down"
         >
           <div className="container">
-            <a className="navbar-brand fw-bold" href="/">
+            <Link href="/" className="navbar-brand fw-bold">
               <span className="text-primary">Sunil</span> Dhakad
-            </a>
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -65,29 +66,29 @@ export default function RootLayout({
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav ms-auto">
                 <li className="nav-item">
-                  <a className="nav-link active" href="#about">
+                  <Link href="#about" className="nav-link active">
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#experience">
+                  <Link href="#experience" className="nav-link">
                     Experience
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#education">
+                  <Link href="#education" className="nav-link">
                     Education
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#projects">
+                  <Link href="#projects" className="nav-link">
                     Projects
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#contact">
+                  <Link href="#contact" className="nav-link">
                     Contact
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
