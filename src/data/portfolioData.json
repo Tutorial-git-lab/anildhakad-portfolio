@@ -1,0 +1,221 @@
+{
+  "personal": {
+    "name": "Sunil Dhakad",
+    "tagline": "Full Stack Developer & Software Engineer",
+    "bio": "Passionate software developer with 5+ years of experience building scalable web applications. I specialize in React, Node.js, and cloud technologies, with a strong focus on creating user-centric solutions that drive business growth.",
+    "profileImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
+    "location": "India",
+    "email": "sunil.dhakad@gmail.com",
+    "phone": "‪+91 98765 43210‬",
+    "resumeUrl": "#resume",
+    "hireMe": "#contact",
+    "googleFormUrl": ""
+  },
+  "social": {
+    "github": "https://github.com/sunildhakad",
+    "linkedin": "https://linkedin.com/in/sunildhakad",
+    "twitter": "https://twitter.com/sunildhakad",
+    "portfolio": "https://sunildhakad.dev"
+  },
+  "skills": [
+    {
+      "category": "Frontend",
+      "items": [
+        { "name": "React.js", "level": "Expert", "percentage": 95 },
+        { "name": "Next.js", "level": "Advanced", "percentage": 90 },
+        { "name": "Bootstrap", "level": "Advanced", "percentage": 85 }
+      ]
+    },
+    {
+      "category": "Backend",
+      "items": [
+        { "name": "Node.js", "level": "Advanced", "percentage": 90 },
+        { "name": "Express.js", "level": "Advanced", "percentage": 85 },
+        { "name": "MongoDB", "level": "Intermediate", "percentage": 80 }
+      ]
+    },
+    {
+      "category": "Tools",
+      "items": [
+        { "name": "Git", "level": "Advanced", "percentage": 90 },
+        { "name": "Docker", "level": "Intermediate", "percentage": 75 }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Senior Full Stack Developer",
+      "company": "TechCorp Solutions",
+      "location": "Mumbai, India",
+      "duration": "Jan 2022 - Present",
+      "type": "Full-time",
+      "points": [
+        "Led development of microservices architecture serving 100K+ users",
+        "Improved application performance by 40% through code optimization",
+        "Mentored 3 junior developers and conducted code reviews",
+        "Implemented CI/CD pipelines reducing deployment time by 60%"
+      ]
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "InnovateLabs",
+      "location": "Pune, India",
+      "duration": "Jun 2020 - Dec 2021",
+      "type": "Full-time",
+      "points": [
+        "Built responsive web applications using React and Node.js",
+        "Developed RESTful APIs and integrated third-party services",
+        "Collaborated with UI/UX team to implement pixel-perfect designs",
+        "Reduced bug reports by 30% through comprehensive testing"
+      ]
+    },
+    {
+      "title": "Software Developer",
+      "company": "StartupXYZ",
+      "location": "Bangalore, India",
+      "duration": "Aug 2019 - May 2020",
+      "type": "Full-time",
+      "points": [
+        "Developed and maintained e-commerce platform features",
+        "Optimized database queries improving response time by 25%",
+        "Participated in agile development and sprint planning",
+        "Contributed to technical documentation and knowledge sharing"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor of Technology in Computer Science",
+      "school": "Indian Institute of Technology (IIT)",
+      "location": "Delhi, India",
+      "period": "2015 - 2019",
+      "grade": "8.5 CGPA",
+      "details": [
+        "Specialized in Data Structures and Algorithms",
+        "Member of Programming Club and Coding Society",
+        "Published research paper on Machine Learning applications"
+      ]
+    },
+    {
+      "degree": "Higher Secondary Certificate (Science)",
+      "school": "Delhi Public School",
+      "location": "Delhi, India",
+      "period": "2013 - 2015",
+      "grade": "92%",
+      "details": [
+        "Mathematics, Physics, Chemistry, Computer Science",
+        "School Topper in Computer Science",
+        "Participated in National Science Olympiad"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "E-Commerce Platform",
+      "description": "Full-stack e-commerce solution with modern UI, payment integration, and admin dashboard. Built with React, Node.js, and PostgreSQL.",
+      "techStack": ["React", "Node.js", "PostgreSQL", "Stripe", "Tailwind CSS"],
+      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+      "demoLink": "https://ecommerce-demo.vercel.app",
+      "githubLink": "https://github.com/sunildhakad/ecommerce-platform",
+      "featured": true
+    },
+    {
+      "title": "Task Management App",
+      "description": "Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+      "techStack": [
+        "Next.js",
+        "TypeScript",
+        "Prisma",
+        "Socket.io",
+        "Framer Motion"
+      ],
+      "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+      "demoLink": "https://taskapp-demo.vercel.app",
+      "githubLink": "https://github.com/sunildhakad/task-management",
+      "featured": true
+    },
+    {
+      "title": "Weather Dashboard",
+      "description": "Modern weather application with location-based forecasts, interactive maps, and weather alerts using multiple APIs.",
+      "techStack": [
+        "Vue.js",
+        "Chart.js",
+        "OpenWeather API",
+        "Mapbox",
+        "Vuetify"
+      ],
+      "image": "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
+      "demoLink": "https://weather-dashboard-demo.vercel.app",
+      "githubLink": "https://github.com/sunildhakad/weather-dashboard",
+      "featured": false
+    },
+    {
+      "title": "Crypto Portfolio Tracker",
+      "description": "Real-time cryptocurrency portfolio tracking application with price alerts, charts, and market analysis tools.",
+      "techStack": [
+        "React",
+        "Redux",
+        "CoinGecko API",
+        "Chart.js",
+        "Material-UI"
+      ],
+      "image": "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=600&h=400&fit=crop",
+      "demoLink": "https://crypto-tracker-demo.vercel.app",
+      "githubLink": "https://github.com/sunildhakad/crypto-portfolio",
+      "featured": true
+    },
+    {
+      "title": "Social Media Analytics",
+      "description": "Analytics dashboard for social media performance tracking with data visualization and automated reporting features.",
+      "techStack": ["Angular", "D3.js", "Python", "FastAPI", "PostgreSQL"],
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+      "demoLink": "https://analytics-demo.vercel.app",
+      "githubLink": "https://github.com/sunildhakad/social-analytics",
+      "featured": false
+    },
+    {
+      "title": "AI Chat Application",
+      "description": "Intelligent chat application with AI-powered responses, real-time messaging, and custom bot integrations.",
+      "techStack": ["React", "Node.js", "OpenAI API", "Socket.io", "MongoDB"],
+      "image": "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=600&h=400&fit=crop",
+      "demoLink": "https://ai-chat-demo.vercel.app",
+      "githubLink": "https://github.com/sunildhakad/ai-chat-app",
+      "featured": true
+    }
+  ],
+  "blogs": [
+    {
+      "title": "Building a Scalable React + Node App",
+      "description": "Architecture decisions, folder structure, and performance tips from a real project.",
+      "image": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=600&h=400&fit=crop",
+      "url": "https://dev.to/sunildhakad/scalable-react-node-architecture",
+      "tags": ["React", "Node.js", "Architecture"],
+      "date": "2024-06-12"
+    },
+    {
+      "title": "Optimizing Web Performance with Lighthouse",
+      "description": "Actionable steps to improve Core Web Vitals in production.",
+      "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop",
+      "url": "https://medium.com/@sunildhakad/optimizing-web-performance-core-web-vitals",
+      "tags": ["Performance", "Lighthouse", "CWV"],
+      "date": "2024-08-02"
+    },
+    {
+      "title": "PostgreSQL on Neon + Prisma",
+      "description": "How I use Neon serverless Postgres with Prisma in full‑stack apps.",
+      "image": "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=600&h=400&fit=crop",
+      "url": "https://sunildhakad.dev/blog/neon-prisma-setup",
+      "tags": ["Prisma", "PostgreSQL", "Neon"],
+      "date": "2024-10-10",
+      "githubLink": "https://github.com/sunildhakad/prisma-neon-starter"
+    }
+  ],
+  "highlights": [
+    "5+ years of professional development experience",
+    "Led teams of 3-5 developers on multiple projects",
+    "Expertise in modern web technologies and cloud platforms",
+    "Strong focus on performance optimization and scalability",
+    "Active contributor to open-source projects",
+    "Passionate about mentoring and knowledge sharing"
+  ]
+}
