@@ -33,9 +33,9 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
-          content="Sunil Dhakad | Full Stack Developer Portfolio"
+          content="Anil Dhakad | Full Stack Developer Portfolio"
         />
-        <title>Sunil Dhakad | Full Stack Developer</title>
+        <title>Anil Dhakad | Full Stack Developer</title>
 
         {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
@@ -49,7 +49,7 @@ export default function RootLayout({
         >
           <div className="container">
             <Link href="/" className="navbar-brand fw-bold">
-              <span className="text-primary">Sunil</span> Dhakad
+              <span className="text-primary">Anil</span> Dhakad
             </Link>
             <button
               className="navbar-toggler"
@@ -106,7 +106,7 @@ export default function RootLayout({
           data-aos="fade-up"
         >
           <p className="mb-0">
-            © {new Date().getFullYear()} <strong>Sunil Dhakad</strong> — All
+            © {new Date().getFullYear()} <strong>Anil Dhakad</strong> — All
             Rights Reserved.
           </p>
           <p className="small text-secondary">

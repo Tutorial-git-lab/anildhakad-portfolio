@@ -26,7 +26,7 @@ export default function Hero() {
       {/* Profile Image */}
       <Image
         src="/images/profile.jpg"
-        alt="Sunil Dhakad"
+        alt="Anil Dhakad"
         width={200}
         height={200}
         className="rounded-circle mb-3 border border-3 border-primary shadow-lg"
@@ -40,7 +40,7 @@ export default function Hero() {
         data-aos="fade-up"
         data-aos-delay="200"
       >
-        Sunil Dhakad
+        Anil Dhakad
       </h1>
 
       {/* Tagline */}
@@ -58,7 +58,7 @@ export default function Hero() {
           View My Work
         </a>
         <a
-          href="/Sunil_Dhakad_CV.pdf"
+          href="/Anil_Dhakad_CV.pdf"
           target="_blank"
           rel="noopener noreferrer"
           className="btn btn-outline-primary btn-lg shadow-sm"

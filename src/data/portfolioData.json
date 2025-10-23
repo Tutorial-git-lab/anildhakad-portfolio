@@ -1,21 +1,21 @@
 {
   "personal": {
-    "name": "Sunil Dhakad",
+    "name": "Anil Dhakad",
     "tagline": "Full Stack Developer & Software Engineer",
     "bio": "Passionate software developer with 5+ years of experience building scalable web applications. I specialize in React, Node.js, and cloud technologies, with a strong focus on creating user-centric solutions that drive business growth.",
     "profileImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
     "location": "India",
-    "email": "sunil.dhakad@gmail.com",
+    "email": "anil.dhakad@gmail.com",
     "phone": "‪+91 98765 43210‬",
     "resumeUrl": "#resume",
     "hireMe": "#contact",
     "googleFormUrl": ""
   },
   "social": {
-    "github": "https://github.com/sunildhakad",
-    "linkedin": "https://linkedin.com/in/sunildhakad",
-    "twitter": "https://twitter.com/sunildhakad",
-    "portfolio": "https://sunildhakad.dev"
+    "github": "https://github.com/Tutorial-git-lab",
+    "linkedin": "https://www.linkedin.com/in/anil-kumar-dhakad-a75230251/",
+    "twitter": "https://twitter.com/anildhakad",
+    "portfolio": "https://sunil-portfolio-3qmo.vercel.app/"
   },
   "skills": [
     {
@@ -116,7 +116,7 @@
       "techStack": ["React", "Node.js", "PostgreSQL", "Stripe", "Tailwind CSS"],
       "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
       "demoLink": "https://ecommerce-demo.vercel.app",
-      "githubLink": "https://github.com/sunildhakad/ecommerce-platform",
+      "githubLink": "https://github.com/Anildhakad/ecommerce-platform",
       "featured": true
     },
     {
@@ -131,7 +131,7 @@
       ],
       "image": "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
       "demoLink": "https://taskapp-demo.vercel.app",
-      "githubLink": "https://github.com/sunildhakad/task-management",
+      "githubLink": "https://github.com/Anildhakad/task-management",
       "featured": true
     },
     {
@@ -146,7 +146,7 @@
       ],
       "image": "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop",
       "demoLink": "https://weather-dashboard-demo.vercel.app",
-      "githubLink": "https://github.com/sunildhakad/weather-dashboard",
+      "githubLink": "https://github.com/Anildhakad/weather-dashboard",
       "featured": false
     },
     {
@@ -161,7 +161,7 @@
       ],
       "image": "https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=600&h=400&fit=crop",
       "demoLink": "https://crypto-tracker-demo.vercel.app",
-      "githubLink": "https://github.com/sunildhakad/crypto-portfolio",
+      "githubLink": "https://github.com/Anildhakad/crypto-portfolio",
       "featured": true
     },
     {
@@ -170,7 +170,7 @@
       "techStack": ["Angular", "D3.js", "Python", "FastAPI", "PostgreSQL"],
       "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
       "demoLink": "https://analytics-demo.vercel.app",
-      "githubLink": "https://github.com/sunildhakad/social-analytics",
+      "githubLink": "https://github.com/Anildhakad/social-analytics",
       "featured": false
     },
     {
@@ -179,7 +179,7 @@
       "techStack": ["React", "Node.js", "OpenAI API", "Socket.io", "MongoDB"],
       "image": "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=600&h=400&fit=crop",
       "demoLink": "https://ai-chat-demo.vercel.app",
-      "githubLink": "https://github.com/sunildhakad/ai-chat-app",
+      "githubLink": "https://github.com/Anildhakad/ai-chat-app",
       "featured": true
     }
   ],
@@ -188,7 +188,7 @@
       "title": "Building a Scalable React + Node App",
       "description": "Architecture decisions, folder structure, and performance tips from a real project.",
       "image": "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=600&h=400&fit=crop",
-      "url": "https://dev.to/sunildhakad/scalable-react-node-architecture",
+      "url": "https://dev.to/Anildhakad/scalable-react-node-architecture",
       "tags": ["React", "Node.js", "Architecture"],
       "date": "2024-06-12"
     },
@@ -196,7 +196,7 @@
       "title": "Optimizing Web Performance with Lighthouse",
       "description": "Actionable steps to improve Core Web Vitals in production.",
       "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop",
-      "url": "https://medium.com/@sunildhakad/optimizing-web-performance-core-web-vitals",
+      "url": "https://medium.com/@Anildhakad/optimizing-web-performance-core-web-vitals",
       "tags": ["Performance", "Lighthouse", "CWV"],
       "date": "2024-08-02"
     },
@@ -204,10 +204,10 @@
       "title": "PostgreSQL on Neon + Prisma",
       "description": "How I use Neon serverless Postgres with Prisma in full‑stack apps.",
       "image": "https://images.unsplash.com/photo-1518779578993-ec3579fee39f?w=600&h=400&fit=crop",
-      "url": "https://sunildhakad.dev/blog/neon-prisma-setup",
+      "url": "https://Anildhakad.dev/blog/neon-prisma-setup",
       "tags": ["Prisma", "PostgreSQL", "Neon"],
       "date": "2024-10-10",
-      "githubLink": "https://github.com/sunildhakad/prisma-neon-starter"
+      "githubLink": "https://github.com/Anildhakad/prisma-neon-starter"
     }
   ],
   "highlights": [

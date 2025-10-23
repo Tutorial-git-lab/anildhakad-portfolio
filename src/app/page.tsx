@@ -89,14 +89,14 @@ export default function HomePage() {
         data-aos="fade-up"
       >
         <p className="mb-1">
-          © {new Date().getFullYear()} <strong>Sunil Dhakad</strong> |{" "}
+          © {new Date().getFullYear()} <strong>Anil Dhakad</strong> |{" "}
           <a
-            href="https://sunildhakad.dev"
+            href="https://Anildhakad.dev"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white text-decoration-underline"
           >
-            sunildhakad.dev
+            Anildhakad.dev
           </a>
         </p>
         <p className="small text-secondary mb-0">
