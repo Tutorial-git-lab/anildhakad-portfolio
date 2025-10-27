@@ -60,7 +60,7 @@
   "education": [
     {
       "degree": "Master Of Computer Application",
-      "college": "Savitribai Phule Pune University",
+      "school": "Savitribai Phule Pune University",
       "location": "Pune, India",
       "period": "2021 - 2024",
       "grade": "8.0 CGPA",
@@ -72,7 +72,7 @@
     },
     {
       "degree": "Bachlor Of Computer Application",
-      "college": "Vikram University Ujjain",
+      "school": "Vikram University Ujjain",
       "location": "Mandsaur, India",
       "period": "2017-2020",
       "grade": "72%",
@@ -185,8 +185,8 @@
     }
   ],
   "highlights": [
-    "1.5+ years of professional development experience",
-    "Led teams of 0-1 developers on multiple projects",
+    "1+ years of professional development experience",
+    "Led teams of developers on multiple projects",
     "Expertise in modern web technologies and cloud platforms",
     "Strong focus on performance optimization and scalability",
     "Active contributor to open-source projects",
