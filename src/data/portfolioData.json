@@ -60,7 +60,7 @@
   "education": [
     {
       "degree": "Master Of Computer Application",
-      "school": "Savitribai Phule Pune University",
+      "college": "Savitribai Phule Pune University",
       "location": "Pune, India",
       "period": "2021 - 2024",
       "grade": "8.0 CGPA",
@@ -72,7 +72,7 @@
     },
     {
       "degree": "Bachlor Of Computer Application",
-      "school": "Vikram University Ujjain",
+      "college": "Vikram University Ujjain",
       "location": "Mandsaur, India",
       "period": "2017-2020",
       "grade": "72%",

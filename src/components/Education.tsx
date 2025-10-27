@@ -39,7 +39,7 @@ export default function Education() {
                     {edu.degree}
                   </h5>
                   <h6 className="card-subtitle mb-2 text-muted">
-                    {edu.school}, {edu.location}
+                    {edu.college}, {edu.location}
                   </h6>
                   <p className="text-secondary mb-2">
                     <strong>Period:</strong> {edu.period} |{" "}
