@@ -1,12 +1,12 @@
 {
   "personal": {
     "name": "Anil Dhakad",
-    "tagline": "Full Stack Developer & Software Engineer",
-    "bio": "Passionate software developer with 5+ years of experience building scalable web applications. I specialize in React, Node.js, and cloud technologies, with a strong focus on creating user-centric solutions that drive business growth.",
+    "tagline": "Full Stack Dot Net Developer & Software Engineer",
+    "bio": "Passionate software developer with 1+ years of experience building scalable web applications. I specialize in React,Next.js,.Net, Node.js, and cloud technologies, with a strong focus on creating user-centric solutions that drive business growth.",
     "profileImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
     "location": "India",
-    "email": "anil.dhakad@gmail.com",
-    "phone": "‪+91 98765 43210‬",
+    "email": "anildhakad8717@gmail.com",
+    "phone": "‪+91 8717948805‬",
     "resumeUrl": "#resume",
     "hireMe": "#contact",
     "googleFormUrl": ""
@@ -30,7 +30,7 @@
       "category": "Backend",
       "items": [
         { "name": "Node.js", "level": "Advanced", "percentage": 90 },
-        { "name": "Express.js", "level": "Advanced", "percentage": 85 },
+        { "name": ".Net", "level": "Advanced", "percentage": 85 },
         { "name": "MongoDB", "level": "Intermediate", "percentage": 80 }
       ]
     },
@@ -38,16 +38,16 @@
       "category": "Tools",
       "items": [
         { "name": "Git", "level": "Advanced", "percentage": 90 },
-        { "name": "Docker", "level": "Intermediate", "percentage": 75 }
+        { "name": "AWS", "level": "Intermediate", "percentage": 75 }
       ]
     }
   ],
   "experience": [
     {
-      "title": "Senior Full Stack Developer",
-      "company": "TechCorp Solutions",
-      "location": "Mumbai, India",
-      "duration": "Jan 2022 - Present",
+      "title": "Junior Full Stack Developer",
+      "company": "Shiwansh Solutions",
+      "location": "Mohali, India",
+      "duration": "Jan 2024 - Present",
       "type": "Full-time",
       "points": [
         "Led development of microservices architecture serving 100K+ users",
@@ -55,41 +55,15 @@
         "Mentored 3 junior developers and conducted code reviews",
         "Implemented CI/CD pipelines reducing deployment time by 60%"
       ]
-    },
-    {
-      "title": "Full Stack Developer",
-      "company": "InnovateLabs",
-      "location": "Pune, India",
-      "duration": "Jun 2020 - Dec 2021",
-      "type": "Full-time",
-      "points": [
-        "Built responsive web applications using React and Node.js",
-        "Developed RESTful APIs and integrated third-party services",
-        "Collaborated with UI/UX team to implement pixel-perfect designs",
-        "Reduced bug reports by 30% through comprehensive testing"
-      ]
-    },
-    {
-      "title": "Software Developer",
-      "company": "StartupXYZ",
-      "location": "Bangalore, India",
-      "duration": "Aug 2019 - May 2020",
-      "type": "Full-time",
-      "points": [
-        "Developed and maintained e-commerce platform features",
-        "Optimized database queries improving response time by 25%",
-        "Participated in agile development and sprint planning",
-        "Contributed to technical documentation and knowledge sharing"
-      ]
     }
   ],
   "education": [
     {
-      "degree": "Bachelor of Technology in Computer Science",
-      "school": "Indian Institute of Technology (IIT)",
-      "location": "Delhi, India",
-      "period": "2015 - 2019",
-      "grade": "8.5 CGPA",
+      "degree": "Master Of Computer Application",
+      "college": "Savitribai Phule Pune University",
+      "location": "Pune, India",
+      "period": "2021 - 2024",
+      "grade": "8.0 CGPA",
       "details": [
         "Specialized in Data Structures and Algorithms",
         "Member of Programming Club and Coding Society",
@@ -97,15 +71,15 @@
       ]
     },
     {
-      "degree": "Higher Secondary Certificate (Science)",
-      "school": "Delhi Public School",
-      "location": "Delhi, India",
-      "period": "2013 - 2015",
-      "grade": "92%",
+      "degree": "Bachlor Of Computer Application",
+      "college": "Vikram University Ujjain",
+      "location": "Mandsaur, India",
+      "period": "2017-2020",
+      "grade": "72%",
       "details": [
-        "Mathematics, Physics, Chemistry, Computer Science",
-        "School Topper in Computer Science",
-        "Participated in National Science Olympiad"
+        "Mathematics, C++, Data Structure,Java Programming ",
+        "college Topper in Computer Application",
+        "Participated in College level Olympiad"
       ]
     }
   ],
@@ -211,8 +185,8 @@
     }
   ],
   "highlights": [
-    "5+ years of professional development experience",
-    "Led teams of 3-5 developers on multiple projects",
+    "1.5+ years of professional development experience",
+    "Led teams of 0-1 developers on multiple projects",
     "Expertise in modern web technologies and cloud platforms",
     "Strong focus on performance optimization and scalability",
     "Active contributor to open-source projects",
