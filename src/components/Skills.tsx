@@ -33,6 +33,7 @@ export default function Skills() {
       className="py-5 position-relative overflow-hidden bg-light"
       aria-labelledby="skills-title"
     >
+      {/* Background gradient effect */}
       <div
         className="position-absolute top-0 start-0 w-100 h-100"
         style={{
@@ -43,6 +44,7 @@ export default function Skills() {
       ></div>
 
       <div className="container position-relative" style={{ zIndex: 1 }}>
+        {/* Section Heading */}
         <motion.div
           className="text-center mb-5"
           initial="hidden"
@@ -59,6 +61,7 @@ export default function Skills() {
           </p>
         </motion.div>
 
+        {/* Skill Cards */}
         <div className="row g-4">
           {skills.map((skill, idx) => {
             const Icon = icons[idx % icons.length];
@@ -76,11 +79,12 @@ export default function Skills() {
                   className="card h-100 skill-card border-0 rounded-4 shadow-lg p-4 position-relative overflow-hidden"
                   aria-label={`Skill category: ${skill.category}`}
                 >
-                  <div className="icon-circle position-absolute top-0 end-0 translate-middle shadow">
+                  {/* Icon Circle with top margin added */}
+                  <div className="icon-circle shadow mb-3">
                     <Icon className="text-white" size={26} aria-hidden="true" />
                   </div>
 
-                  <h3 className="fw-bold mb-4 text-primary border-bottom pb-2 fs-5">
+                  <h3 className="fw-bold mb-4 text-primary border-bottom pb-2 fs-5 text-center">
                     {skill.category}
                   </h3>
 
@@ -128,12 +132,14 @@ export default function Skills() {
         </div>
       </div>
 
+      {/* Custom Styles */}
       <style jsx>{`
         .skill-card {
           backdrop-filter: blur(8px);
           background: rgba(255, 255, 255, 0.85);
           transition: transform 0.4s ease, box-shadow 0.4s ease;
           border: 1px solid rgba(255, 255, 255, 0.2);
+          text-align: center;
         }
 
         .skill-card:hover {
@@ -142,14 +148,14 @@ export default function Skills() {
         }
 
         .icon-circle {
-          width: 50px;
-          height: 50px;
+          width: 60px;
+          height: 60px;
           border-radius: 50%;
           background: linear-gradient(135deg, #0d6efd, #6f42c1);
           display: flex;
           align-items: center;
           justify-content: center;
-          transform: translate(25%, -25%);
+          margin: 0 auto 1.5rem auto; /* Adds space above and below */
         }
 
         .gradient-bar {
@@ -159,6 +165,11 @@ export default function Skills() {
         @media (max-width: 768px) {
           .skill-card {
             padding: 1.5rem;
+          }
+          .icon-circle {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 1rem;
           }
         }
       `}</style>
