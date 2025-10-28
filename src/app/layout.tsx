@@ -5,6 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Link from "next/link";
+import { FaGithub, FaLinkedin, FaArrowUp } from "react-icons/fa";
 
 export default function RootLayout({
   children,
@@ -12,32 +13,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
-    // Initialize AOS
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-      mirror: false,
-    });
-
-    // Load Bootstrap JS dynamically
+    AOS.init({ duration: 1000, easing: "ease-in-out", once: true });
     import("bootstrap/dist/js/bootstrap.bundle.min.js");
 
-    // Scroll-to-top visibility
     const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 300);
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      setScrollProgress(progress);
+      setShowScrollTop(scrollTop > 300);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Scroll to top
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
     <html lang="en">
@@ -53,14 +48,22 @@ export default function RootLayout({
 
       <body
         className="bg-light text-dark"
-        style={{
-          fontFamily: "Poppins, sans-serif",
-          scrollBehavior: "smooth",
-        }}
+        style={{ fontFamily: "Poppins, sans-serif", scrollBehavior: "smooth" }}
       >
+        {/* ===== Scroll Progress Bar ===== */}
+        <div
+          className="position-fixed top-0 start-0 bg-primary"
+          style={{
+            height: "4px",
+            width: `${scrollProgress}%`,
+            zIndex: 1050,
+            transition: "width 0.25s ease",
+          }}
+        ></div>
+
         {/* ===== Navbar ===== */}
         <nav
-          className="navbar navbar-expand-lg navbar-dark bg-dark bg-opacity-75 shadow-sm sticky-top backdrop-blur"
+          className="navbar navbar-expand-lg navbar-dark bg-dark bg-opacity-75 shadow-sm sticky-top"
           data-aos="fade-down"
         >
           <div className="container">
@@ -106,25 +109,49 @@ export default function RootLayout({
           </div>
         </nav>
 
+        {/* ===== Floating Social Icons ===== */}
+        <div
+          className="position-fixed top-50 translate-middle-y start-0 d-flex flex-column align-items-center gap-3 ms-3"
+          style={{ zIndex: 1000 }}
+          data-aos="fade-right"
+        >
+          <a
+            href="https://github.com/AnilDhakad"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-dark bg-white rounded-circle p-2 shadow-sm hover-glow"
+          >
+            <FaGithub size={20} />
+          </a>
+          <a
+            href="https://linkedin.com/in/anil-dhakad"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-dark bg-white rounded-circle p-2 shadow-sm hover-glow"
+          >
+            <FaLinkedin size={20} color="#0A66C2" />
+          </a>
+        </div>
+
         {/* ===== Main Content ===== */}
-        <main className="container py-5" data-aos="fade-up">
-          {children}
-        </main>
+        <main className="container py-5">{children}</main>
 
         {/* ===== Footer ===== */}
         <footer
-          className="bg-dark text-white text-center py-4 mt-auto shadow-lg"
-          data-aos="fade-up"
+          className="text-white text-center py-4 mt-auto"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(13,110,253,1) 0%, rgba(111,66,193,1) 100%)",
+            boxShadow: "0 -5px 15px rgba(0,0,0,0.1)",
+          }}
         >
           <div className="container">
-            <p className="mb-1">
-              © {new Date().getFullYear()} <strong>Anil Dhakad</strong> — All
-              Rights Reserved.
+            <p className="mb-1 fw-semibold">
+              © {new Date().getFullYear()} Anil Dhakad — All Rights Reserved.
             </p>
-            <p className="small text-secondary mb-0">
-              Built with ❤️ using <span className="text-primary">Next.js</span>,{" "}
-              <span className="text-info">Bootstrap</span> &{" "}
-              <span className="text-warning">AOS</span>
+            <p className="small text-light mb-0">
+              Built with ❤️ using <strong>Next.js</strong>,{" "}
+              <strong>Bootstrap</strong>, and <strong>AOS</strong>.
             </p>
           </div>
         </footer>
@@ -133,27 +160,16 @@ export default function RootLayout({
         {showScrollTop && (
           <button
             onClick={scrollToTop}
-            className="btn btn-primary position-fixed"
-            style={{
-              bottom: "25px",
-              right: "25px",
-              borderRadius: "50%",
-              padding: "10px 14px",
-              zIndex: 1000,
-              boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
-              transition: "transform 0.3s ease",
-            }}
+            className="btn btn-primary position-fixed scroll-top-btn"
             data-aos="fade-left"
           >
-            ↑
+            <FaArrowUp size={18} />
           </button>
         )}
 
         {/* ===== Custom Styles ===== */}
         <style jsx global>{`
-          /* Smooth underline animation for nav links */
           .nav-link {
-            position: relative;
             color: #ddd !important;
             transition: color 0.3s ease;
           }
@@ -161,7 +177,6 @@ export default function RootLayout({
             color: #0d6efd !important;
           }
           .nav-link-underline {
-            content: "";
             position: absolute;
             bottom: 0;
             left: 0;
@@ -174,20 +189,38 @@ export default function RootLayout({
             width: 100%;
           }
 
-          /* Subtle body fade animation */
-          body {
-            animation: fadeIn 1s ease-in;
+          .scroll-top-btn {
+            bottom: 25px;
+            right: 25px;
+            border-radius: 50%;
+            padding: 12px 14px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            animation: pulse 1.5s infinite;
           }
-          @keyframes fadeIn {
-            from {
-              opacity: 0;
+          .scroll-top-btn:hover {
+            transform: rotate(360deg);
+            transition: transform 0.4s ease;
+          }
+
+          @keyframes pulse {
+            0% {
+              box-shadow: 0 0 0 0 rgba(13, 110, 253, 0.6);
             }
-            to {
-              opacity: 1;
+            70% {
+              box-shadow: 0 0 0 10px rgba(13, 110, 253, 0);
+            }
+            100% {
+              box-shadow: 0 0 0 0 rgba(13, 110, 253, 0);
             }
           }
 
-          /* Custom scrollbar */
+          .hover-glow:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(13, 110, 253, 0.4);
+            transition: all 0.3s ease;
+          }
+
           ::-webkit-scrollbar {
             width: 8px;
           }

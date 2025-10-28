@@ -1,10 +1,6 @@
-// src/components/Skills.tsx
 "use client";
 
-import { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import data from "../data/portfolioData.json";
+import { motion, Variants } from "framer-motion";
 import {
   FaCode,
   FaDatabase,
@@ -12,27 +8,31 @@ import {
   FaCloud,
   FaTools,
 } from "react-icons/fa";
+import data from "../data/portfolioData.json";
 
 export default function Skills() {
   const { skills } = data;
-
-  useEffect(() => {
-    AOS.init({
-      duration: 1200,
-      easing: "ease-in-out",
-      once: true,
-      offset: 100,
-    });
-  }, []);
-
   const icons = [FaCode, FaDatabase, FaLaptopCode, FaCloud, FaTools];
+
+  const fadeUp: Variants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.15,
+        duration: 0.6,
+        ease: [0.17, 0.55, 0.55, 1],
+      },
+    }),
+  };
 
   return (
     <section
       id="skills"
       className="py-5 position-relative overflow-hidden bg-light"
+      aria-labelledby="skills-title"
     >
-      {/* Background glow effects */}
       <div
         className="position-absolute top-0 start-0 w-100 h-100"
         style={{
@@ -43,40 +43,59 @@ export default function Skills() {
       ></div>
 
       <div className="container position-relative" style={{ zIndex: 1 }}>
-        <div className="text-center mb-5" data-aos="fade-down">
-          <h2 className="display-5 fw-bold text-primary mb-3">My Skills</h2>
+        <motion.div
+          className="text-center mb-5"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+        >
+          <h2 id="skills-title" className="display-5 fw-bold text-primary mb-3">
+            My Skills
+          </h2>
           <p className="text-muted fs-5">
             A blend of technologies I use to build powerful and scalable
             applications
           </p>
-        </div>
+        </motion.div>
 
         <div className="row g-4">
           {skills.map((skill, idx) => {
             const Icon = icons[idx % icons.length];
             return (
-              <div
+              <motion.div
                 className="col-md-6 col-lg-4"
                 key={idx}
-                data-aos="zoom-in"
-                data-aos-delay={idx * 150}
+                custom={idx}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+                variants={fadeUp}
               >
-                <div className="card h-100 skill-card border-0 rounded-4 shadow-lg p-4 position-relative overflow-hidden">
-                  {/* Floating Icon */}
+                <article
+                  className="card h-100 skill-card border-0 rounded-4 shadow-lg p-4 position-relative overflow-hidden"
+                  aria-label={`Skill category: ${skill.category}`}
+                >
                   <div className="icon-circle position-absolute top-0 end-0 translate-middle shadow">
-                    <Icon className="text-white" size={26} />
+                    <Icon className="text-white" size={26} aria-hidden="true" />
                   </div>
 
-                  <h5 className="fw-bold mb-4 text-primary border-bottom pb-2">
+                  <h3 className="fw-bold mb-4 text-primary border-bottom pb-2 fs-5">
                     {skill.category}
-                  </h5>
+                  </h3>
 
                   <div className="d-flex flex-column gap-3">
                     {skill.items.map((item, i) => (
-                      <div
+                      <motion.div
                         key={i}
-                        data-aos="fade-right"
-                        data-aos-delay={i * 100}
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{
+                          delay: i * 0.1,
+                          duration: 0.5,
+                          ease: [0.25, 0.1, 0.25, 1],
+                        }}
+                        viewport={{ once: true }}
                       >
                         <div className="d-flex justify-content-between mb-1 small">
                           <span className="fw-semibold">{item.name}</span>
@@ -86,29 +105,29 @@ export default function Skills() {
                           className="progress rounded-pill bg-white shadow-sm"
                           style={{ height: "10px" }}
                         >
-                          <div
+                          <motion.div
                             className="progress-bar gradient-bar"
                             role="progressbar"
-                            style={{
+                            initial={{ width: 0 }}
+                            whileInView={{
                               width: `${item.percentage}%`,
-                              transition: "width 1s ease",
+                              transition: { duration: 1 },
                             }}
                             aria-valuenow={item.percentage}
                             aria-valuemin={0}
                             aria-valuemax={100}
-                          ></div>
+                          ></motion.div>
                         </div>
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
-                </div>
-              </div>
+                </article>
+              </motion.div>
             );
           })}
         </div>
       </div>
 
-      {/* Custom Styles */}
       <style jsx>{`
         .skill-card {
           backdrop-filter: blur(8px);

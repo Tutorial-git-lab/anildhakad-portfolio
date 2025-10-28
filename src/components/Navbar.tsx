@@ -1,80 +1,107 @@
-// src/components/Header.tsx
 "use client";
 
-import { useState, useEffect } from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { motion, Variants } from "framer-motion";
+import { Nav, Container } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState("hero");
 
+  // Handle scroll for navbar styling
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true });
-
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleSetActive = (link: string) => {
-    setActiveLink(link);
+  const navLinks = [
+    "about",
+    "skills",
+    "experience",
+    "education",
+    "projects",
+    "blogs",
+    "contact",
+  ];
+
+  const handleSetActive = (link: string) => setActiveLink(link);
+
+  // ✅ Motion variant for navbar animation
+  const navVariants: Variants = {
+    hidden: { y: -100, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }, // cubic-bezier
+    },
   };
 
   return (
-    <Navbar
-      expand="lg"
-      fixed="top"
-      className={`shadow-sm py-3 transition-navbar ${
+    <motion.nav
+      className={`navbar navbar-expand-lg fixed-top shadow-sm py-3 transition-navbar ${
         scrolled ? "navbar-scrolled bg-white" : "bg-transparent"
       }`}
-      data-aos="fade-down"
+      variants={navVariants}
+      initial="hidden"
+      animate="visible"
+      role="navigation"
+      aria-label="Main navigation"
     >
       <Container>
         {/* Brand Logo */}
-        <Navbar.Brand
+        <a
           href="#hero"
-          className="fw-bold text-primary fs-4 d-flex align-items-center"
+          className="navbar-brand fw-bold text-primary fs-4 d-flex align-items-center"
+          aria-label="Go to homepage"
         >
-          <span className="me-2">👨‍💻</span> Anil Dhakad
-        </Navbar.Brand>
+          <span className="me-2" aria-hidden="true">
+            👨‍💻
+          </span>
+          Anil Dhakad
+        </a>
 
-        <Navbar.Toggle
-          aria-controls="basic-navbar-nav"
-          className="border-0 shadow-none"
-        />
-        <Navbar.Collapse id="basic-navbar-nav">
+        {/* Mobile Toggle */}
+        <button
+          className="navbar-toggler border-0 shadow-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation menu"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        {/* Collapsible Navigation */}
+        <div className="collapse navbar-collapse" id="navbarNav">
           <Nav className="ms-auto align-items-center">
-            {[
-              "about",
-              "skills",
-              "experience",
-              "education",
-              "projects",
-              "blogs",
-              "contact",
-            ].map((section) => (
-              <Nav.Link
+            {navLinks.map((section) => (
+              <motion.div
                 key={section}
-                href={`#${section}`}
-                className={`fw-medium nav-link-custom ${
-                  activeLink === section ? "active-link" : ""
-                }`}
-                onClick={() => handleSetActive(section)}
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
-                {section.charAt(0).toUpperCase() + section.slice(1)}
-              </Nav.Link>
+                <Nav.Link
+                  href={`#${section}`}
+                  className={`fw-medium nav-link-custom ${
+                    activeLink === section ? "active-link" : ""
+                  }`}
+                  onClick={() => handleSetActive(section)}
+                  aria-current={activeLink === section ? "page" : undefined}
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </Nav.Link>
+              </motion.div>
             ))}
           </Nav>
-        </Navbar.Collapse>
+        </div>
       </Container>
 
-      {/* Inline Styles */}
+      {/* Scoped Styles */}
       <style jsx>{`
         .transition-navbar {
           transition: background-color 0.4s ease, box-shadow 0.4s ease,
@@ -90,6 +117,7 @@ export default function Header() {
           position: relative;
           margin-right: 1.2rem;
           color: #333 !important;
+          font-size: 1.05rem;
           transition: color 0.3s ease;
         }
 
@@ -97,7 +125,7 @@ export default function Header() {
           color: #0d6efd !important;
         }
 
-        /* Animated underline */
+        /* Gradient underline */
         .nav-link-custom::after {
           content: "";
           position: absolute;
@@ -120,7 +148,7 @@ export default function Header() {
           font-weight: 600;
         }
 
-        /* Mobile */
+        /* Mobile Responsiveness */
         @media (max-width: 991px) {
           .navbar-collapse {
             background: white;
@@ -135,6 +163,6 @@ export default function Header() {
           }
         }
       `}</style>
-    </Navbar>
+    </motion.nav>
   );
 }

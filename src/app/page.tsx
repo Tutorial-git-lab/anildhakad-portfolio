@@ -1,19 +1,22 @@
+// src/app/page.tsx or src/app/home/page.tsx
 "use client";
 
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { FaArrowUp } from "react-icons/fa";
 
-// Section Components
-import Hero from "../components/Hero";
-import About from "../components/About";
-import Skills from "../components/Skills";
-import Experience from "../components/Experience";
-import Education from "../components/Education";
-import Projects from "../components/Projects";
-import Blogs from "../components/Blogs";
-import Contact from "../components/Contact";
+// ✅ Lazy Load Section Components
+const Hero = dynamic(() => import("../components/Hero"));
+const About = dynamic(() => import("../components/About"));
+const Skills = dynamic(() => import("../components/Skills"));
+const Experience = dynamic(() => import("../components/Experience"));
+const Education = dynamic(() => import("../components/Education"));
+const Projects = dynamic(() => import("../components/Projects"));
+const Blogs = dynamic(() => import("../components/Blogs"));
+const Contact = dynamic(() => import("../components/Contact"));
 
 export default function HomePage() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -47,10 +50,10 @@ export default function HomePage() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // Section Titles with animated underline
+  // Section Title Component
   const SectionTitle = ({ title }: { title: string }) => (
     <div className="text-center mb-5" data-aos="zoom-in">
-      <h2 className="fw-bold text-uppercase">{title}</h2>
+      <h2 className="fw-bold text-uppercase section-heading">{title}</h2>
       <div className="mx-auto mt-3 mb-2" style={{ width: "60px" }}>
         <div className="border-bottom border-3 border-primary"></div>
       </div>
@@ -60,7 +63,23 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Scroll Progress Bar */}
+      {/* ===== SEO META TAGS ===== */}
+      <head>
+        <title>Anil Kumar Dhakad | Full Stack .NET & React Developer</title>
+        <meta
+          name="description"
+          content="Portfolio of Anil Dhakad — a Full Stack Developer specializing in .NET Core, Next.js, and modern web development."
+        />
+        <meta name="author" content="Anil Dhakad" />
+        <meta
+          name="keywords"
+          content=".NET, React, Next.js, ASP.NET Core, Web API, Full Stack Developer, Portfolio"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </head>
+
+      {/* ===== Scroll Progress Bar ===== */}
       <div
         className="position-fixed top-0 start-0 bg-primary"
         style={{
@@ -93,7 +112,11 @@ export default function HomePage() {
         </section>
 
         {/* ===== Skills Section ===== */}
-        <section id="skills" className="py-5 bg-light" data-aos="fade-up">
+        <section
+          id="skills"
+          className="py-5 py-md-6 bg-light"
+          data-aos="fade-up"
+        >
           <div className="container">
             <SectionTitle title="Skills" />
             <Skills />
@@ -147,7 +170,7 @@ export default function HomePage() {
         data-aos="fade-up"
       >
         <p className="mb-1">
-          © {new Date().getFullYear()} <strong>Anil Dhakad</strong> |{" "}
+          © {new Date().getFullYear()} <strong>Anil Kumar Dhakad</strong> |{" "}
           <a
             href="https://Anildhakad.dev"
             target="_blank"
@@ -166,18 +189,19 @@ export default function HomePage() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="btn btn-primary position-fixed"
+          aria-label="Scroll to top"
+          title="Go to top"
+          className="btn btn-primary position-fixed scroll-top-btn"
           style={{
             bottom: "25px",
             right: "25px",
             borderRadius: "50%",
             zIndex: 1050,
             boxShadow: "0 4px 10px rgba(0,0,0,0.3)",
-            transition: "transform 0.3s ease",
           }}
           data-aos="fade-left"
         >
-          ↑
+          <FaArrowUp size={18} />
         </button>
       )}
 
@@ -188,19 +212,36 @@ export default function HomePage() {
           background-color: #f8f9fa;
           color: #212529;
           scroll-behavior: smooth;
+          animation: fadeIn 1s ease-in-out;
         }
 
-        /* Section title animation */
-        h2 {
-          letter-spacing: 1px;
+        /* Section Title Hover Animation */
+        .section-heading {
+          position: relative;
+          display: inline-block;
+          transition: color 0.3s ease;
         }
 
-        /* Section alternate coloring */
-        section:nth-of-type(even) {
-          background: #f8f9fa;
+        .section-heading:hover {
+          color: #0d6efd;
         }
 
-        /* Scrollbar customization */
+        .section-heading::after {
+          content: "";
+          position: absolute;
+          width: 0%;
+          height: 3px;
+          bottom: -6px;
+          left: 0;
+          background-color: #0d6efd;
+          transition: width 0.4s ease;
+        }
+
+        .section-heading:hover::after {
+          width: 100%;
+        }
+
+        /* Scrollbar Customization */
         ::-webkit-scrollbar {
           width: 8px;
         }
@@ -212,9 +253,13 @@ export default function HomePage() {
           background: #e9ecef;
         }
 
-        /* Smooth fade on body load */
-        body {
-          animation: fadeIn 1s ease-in-out;
+        /* Scroll Button Hover */
+        .scroll-top-btn {
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .scroll-top-btn:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
         }
 
         @keyframes fadeIn {

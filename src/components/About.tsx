@@ -1,3 +1,4 @@
+// src/components/About.tsx
 "use client";
 
 import { useEffect } from "react";
@@ -18,7 +19,12 @@ export default function About() {
   const { profileImage, location, email, phone, resumeUrl, hireMe } = personal;
 
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true, easing: "ease-in-out" });
+    AOS.init({
+      duration: 1000,
+      once: true,
+      easing: "ease-in-out",
+      offset: 120,
+    });
   }, []);
 
   return (
@@ -27,7 +33,7 @@ export default function About() {
       className="py-5 position-relative overflow-hidden"
       data-aos="fade-up"
     >
-      {/* Background gradient overlay */}
+      {/* ===== Background Gradient Overlay ===== */}
       <div
         className="position-absolute top-0 start-0 w-100 h-100"
         style={{
@@ -38,9 +44,11 @@ export default function About() {
       ></div>
 
       <div className="container">
-        {/* Section Header */}
-        <div className="text-center mb-5" data-aos="fade-down">
-          <h2 className="fw-bold display-5 text-uppercase mb-2">About Me</h2>
+        {/* ===== Section Header ===== */}
+        <header className="text-center mb-5" data-aos="fade-down">
+          <h2 className="fw-bold display-5 text-uppercase mb-2 section-heading">
+            About Me
+          </h2>
           <div className="mx-auto mb-3" style={{ width: "70px" }}>
             <div className="border-bottom border-3 border-primary"></div>
           </div>
@@ -48,10 +56,11 @@ export default function About() {
             Discover who I am, my professional background, and what I love to
             build.
           </p>
-        </div>
+        </header>
 
-        {/* Profile & Bio Section */}
+        {/* ===== Profile & Bio Section ===== */}
         <div className="row align-items-center mb-5 gy-4">
+          {/* Profile Picture */}
           <div
             className="col-md-4 text-center"
             data-aos="zoom-in"
@@ -60,9 +69,11 @@ export default function About() {
             <div className="position-relative d-inline-block p-2 rounded-circle bg-white shadow-lg profile-frame">
               <Image
                 src={profileImage}
-                alt="Profile"
+                alt="Anil Dhakad Profile Photo"
                 width={220}
                 height={220}
+                placeholder="blur"
+                blurDataURL="/placeholder.png"
                 className="rounded-circle img-fluid shadow-lg profile-image"
               />
               <div
@@ -75,8 +86,9 @@ export default function About() {
             </div>
           </div>
 
+          {/* Bio Information */}
           <div className="col-md-8" data-aos="fade-left" data-aos-delay="200">
-            <div className="card border-0 shadow-lg bg-white bg-opacity-75 backdrop-blur">
+            <article className="card border-0 shadow-lg bg-white bg-opacity-75 backdrop-blur">
               <div className="card-body p-4">
                 <p className="fs-6 mb-4">{personal.bio}</p>
                 <ul className="list-unstyled mb-4">
@@ -106,25 +118,31 @@ export default function About() {
                   </li>
                 </ul>
 
+                {/* Buttons */}
                 <div className="d-flex flex-wrap gap-3">
                   <a
                     href={resumeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-primary px-4 shimmer-button"
+                    aria-label="Download Resume"
                   >
                     Download Resume
                   </a>
-                  <a href={hireMe} className="btn btn-outline-primary px-4">
+                  <a
+                    href={hireMe}
+                    className="btn btn-outline-primary px-4 hire-btn"
+                    aria-label="Hire Me"
+                  >
                     Hire Me
                   </a>
                 </div>
               </div>
-            </div>
+            </article>
           </div>
         </div>
 
-        {/* Highlights Section */}
+        {/* ===== Highlights Section ===== */}
         <div className="row g-4 mt-4">
           {highlights.map((item, idx) => (
             <div
@@ -144,7 +162,7 @@ export default function About() {
         </div>
       </div>
 
-      {/* Custom Styles */}
+      {/* ===== Custom Styles ===== */}
       <style jsx global>{`
         body {
           font-family: "Poppins", sans-serif;
@@ -165,12 +183,18 @@ export default function About() {
 
         .highlight-card:hover {
           transform: translateY(-5px);
-          box-shadow: 0 8px 20px rgba(13, 110, 253, 0.2);
+          box-shadow: 0 8px 20px rgba(13, 110, 253, 0.25);
         }
 
         .shimmer-button {
           position: relative;
           overflow: hidden;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .shimmer-button:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 6px 12px rgba(13, 110, 253, 0.3);
         }
 
         .shimmer-button::after {
@@ -187,6 +211,16 @@ export default function About() {
             rgba(255, 255, 255, 0.2)
           );
           animation: shimmer 2s infinite;
+        }
+
+        .hire-btn {
+          transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .hire-btn:hover {
+          background-color: #0d6efd;
+          color: #fff !important;
+          transform: translateY(-2px);
         }
 
         @keyframes shimmer {
