@@ -1,9 +1,9 @@
-// src/components/About.tsx
 "use client";
 
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Image from "next/image";
 import data from "../data/portfolioData.json";
 import {
@@ -18,68 +18,104 @@ export default function About() {
   const { profileImage, location, email, phone, resumeUrl, hireMe } = personal;
 
   useEffect(() => {
-    AOS.init({ duration: 800, once: true });
+    AOS.init({ duration: 1000, once: true, easing: "ease-in-out" });
   }, []);
 
   return (
-    <section id="about" className="py-5 bg-light" data-aos="fade-up">
+    <section
+      id="about"
+      className="py-5 position-relative overflow-hidden"
+      data-aos="fade-up"
+    >
+      {/* Background gradient overlay */}
+      <div
+        className="position-absolute top-0 start-0 w-100 h-100"
+        style={{
+          background:
+            "linear-gradient(135deg, rgba(13,110,253,0.05), rgba(255,255,255,0.9))",
+          zIndex: -1,
+        }}
+      ></div>
+
       <div className="container">
-        {/* Section Heading */}
-        <div className="text-center mb-5">
-          <h2 className="display-5 fw-bold">About Me</h2>
+        {/* Section Header */}
+        <div className="text-center mb-5" data-aos="fade-down">
+          <h2 className="fw-bold display-5 text-uppercase mb-2">About Me</h2>
+          <div className="mx-auto mb-3" style={{ width: "70px" }}>
+            <div className="border-bottom border-3 border-primary"></div>
+          </div>
           <p className="text-muted fs-5">
-            A brief introduction and highlights of my professional journey
+            Discover who I am, my professional background, and what I love to
+            build.
           </p>
         </div>
 
-        {/* Bio with Profile Image */}
-        <div className="row align-items-center mb-5">
+        {/* Profile & Bio Section */}
+        <div className="row align-items-center mb-5 gy-4">
           <div
-            className="col-md-4 text-center mb-3 mb-md-0"
-            data-aos="fade-right"
+            className="col-md-4 text-center"
+            data-aos="zoom-in"
+            data-aos-delay="100"
           >
-            <Image
-              src={profileImage}
-              alt="Profile"
-              width={200}
-              height={200}
-              className="rounded-circle shadow"
-            />
+            <div className="position-relative d-inline-block p-2 rounded-circle bg-white shadow-lg profile-frame">
+              <Image
+                src={profileImage}
+                alt="Profile"
+                width={220}
+                height={220}
+                className="rounded-circle img-fluid shadow-lg profile-image"
+              />
+              <div
+                className="position-absolute top-0 start-0 w-100 h-100 rounded-circle"
+                style={{
+                  border: "3px solid rgba(13,110,253,0.4)",
+                  animation: "pulseBorder 3s infinite",
+                }}
+              ></div>
+            </div>
           </div>
-          <div className="col-md-8" data-aos="fade-left">
-            <div className="card shadow-sm border-0">
-              <div className="card-body">
-                <p className="fs-6 mb-3">{personal.bio}</p>
-                <ul className="list-unstyled mb-3">
-                  <li className="mb-1">
+
+          <div className="col-md-8" data-aos="fade-left" data-aos-delay="200">
+            <div className="card border-0 shadow-lg bg-white bg-opacity-75 backdrop-blur">
+              <div className="card-body p-4">
+                <p className="fs-6 mb-4">{personal.bio}</p>
+                <ul className="list-unstyled mb-4">
+                  <li className="mb-2">
                     <FaMapMarkerAlt className="text-primary me-2" />
-                    {location}
+                    <strong>Location:</strong> {location}
                   </li>
-                  <li className="mb-1">
+                  <li className="mb-2">
                     <FaEnvelope className="text-primary me-2" />
+                    <strong>Email:</strong>{" "}
                     <a
                       href={`mailto:${email}`}
-                      className="text-decoration-none"
+                      className="text-decoration-none text-dark"
                     >
                       {email}
                     </a>
                   </li>
-                  <li className="mb-1">
+                  <li className="mb-2">
                     <FaPhone className="text-primary me-2" />
-                    <a href={`tel:${phone}`} className="text-decoration-none">
+                    <strong>Phone:</strong>{" "}
+                    <a
+                      href={`tel:${phone}`}
+                      className="text-decoration-none text-dark"
+                    >
                       {phone}
                     </a>
                   </li>
                 </ul>
-                <div className="d-flex gap-3">
+
+                <div className="d-flex flex-wrap gap-3">
                   <a
                     href={resumeUrl}
-                    className="btn btn-primary"
                     target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary px-4 shimmer-button"
                   >
                     Download Resume
                   </a>
-                  <a href={hireMe} className="btn btn-outline-primary">
+                  <a href={hireMe} className="btn btn-outline-primary px-4">
                     Hire Me
                   </a>
                 </div>
@@ -88,25 +124,95 @@ export default function About() {
           </div>
         </div>
 
-        {/* Highlights */}
-        <div className="row">
+        {/* Highlights Section */}
+        <div className="row g-4 mt-4">
           {highlights.map((item, idx) => (
             <div
               key={idx}
-              className="col-md-6 col-lg-4 mb-3"
+              className="col-sm-6 col-lg-4"
               data-aos="zoom-in"
-              data-aos-delay={idx * 100}
+              data-aos-delay={idx * 150}
             >
-              <div className="card h-100 border-0 shadow-sm">
+              <div className="card h-100 border-0 shadow-sm highlight-card">
                 <div className="card-body d-flex align-items-start">
                   <FaCheckCircle className="text-primary me-3 fs-4 mt-1" />
-                  <p className="mb-0">{item}</p>
+                  <p className="mb-0 fw-semibold text-dark">{item}</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Custom Styles */}
+      <style jsx global>{`
+        body {
+          font-family: "Poppins", sans-serif;
+        }
+
+        .profile-frame {
+          background: linear-gradient(
+            135deg,
+            rgba(13, 110, 253, 0.1),
+            rgba(255, 255, 255, 0.7)
+          );
+        }
+
+        .highlight-card {
+          transition: all 0.3s ease;
+          border-radius: 12px;
+        }
+
+        .highlight-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 20px rgba(13, 110, 253, 0.2);
+        }
+
+        .shimmer-button {
+          position: relative;
+          overflow: hidden;
+        }
+
+        .shimmer-button::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -75%;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(
+            120deg,
+            rgba(255, 255, 255, 0.2),
+            rgba(255, 255, 255, 0.6),
+            rgba(255, 255, 255, 0.2)
+          );
+          animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+          0% {
+            left: -75%;
+          }
+          100% {
+            left: 125%;
+          }
+        }
+
+        @keyframes pulseBorder {
+          0% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          50% {
+            transform: scale(1.05);
+            opacity: 0.7;
+          }
+          100% {
+            transform: scale(1);
+            opacity: 1;
+          }
+        }
+      `}</style>
     </section>
   );
 }

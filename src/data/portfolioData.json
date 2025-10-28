@@ -1,6 +1,6 @@
 {
   "personal": {
-    "name": "Anil Dhakad",
+    "name": "Anil Kumar Dhakad",
     "tagline": "Full Stack Dot Net Developer & Software Engineer",
     "bio": "Passionate software developer with 1+ years of experience building scalable web applications. I specialize in React,Next.js,.Net, Node.js, and cloud technologies, with a strong focus on creating user-centric solutions that drive business growth.",
     "profileImage": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",
@@ -31,7 +31,7 @@
       "items": [
         { "name": "Node.js", "level": "Advanced", "percentage": 90 },
         { "name": ".Net", "level": "Advanced", "percentage": 85 },
-        { "name": "MongoDB", "level": "Intermediate", "percentage": 80 }
+        { "name": "Sql Server", "level": "Intermediate", "percentage": 80 }
       ]
     },
     {
@@ -44,10 +44,23 @@
   ],
   "experience": [
     {
+      "title": "Intern Developer",
+      "company": "Shiwansh Solutions",
+      "location": "Mohali, India",
+      "duration": "Jan 2024 - Aug 2024",
+      "type": "Internship",
+      "points": [
+        "Assisted in developing and maintaining microservices architecture for scalable web applications",
+        "Optimized backend APIs and database queries, improving application performance by 40%",
+        "Collaborated with senior developers during code reviews and sprint planning",
+        "Contributed to CI/CD pipeline automation, reducing deployment time by 60%"
+      ]
+    },
+    {
       "title": "Junior Full Stack Developer",
       "company": "Shiwansh Solutions",
       "location": "Mohali, India",
-      "duration": "Jan 2024 - Present",
+      "duration": "Aug 2024 - Aug 2025",
       "type": "Full-time",
       "points": [
         "Led development of microservices architecture serving 100K+ users",
@@ -72,12 +85,12 @@
     },
     {
       "degree": "Bachlor Of Computer Application",
-      "college": "Vikram University Ujjain",
+      "college": "Vikram University Ujjain,MP",
       "location": "Mandsaur, India",
       "period": "2017-2020",
       "grade": "72%",
       "details": [
-        "Mathematics, C++, Data Structure,Java Programming ",
+        "C++, Data Structure,Java Programming,JavaScript,Netwoking ",
         "college Topper in Computer Application",
         "Participated in College level Olympiad"
       ]
